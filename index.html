@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Rutas cercanas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    #map {
+      height: 70vh;
+      width: 100%;
+    }
+    #controls {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #1976d2;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1258a4;
+    }
+    #infoPanel {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #f4f4f4;
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center;">Rutas de tiendas cercanas (≤ 5 km)</h2>
+
+  <div id="controls">
+    <button id="btn">Buscar tiendas cercanas</button>
+    <button id="btnCambiarRuta">Cambiar ruta</button>
+  </div>
+
+  <div id="map"></div>
+
+  <div id="infoPanel">
+    <ul id="lista"></ul>
+  </div>
+
+  <!-- API de Google Maps -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFPtVpt6LgiJWT7g1BODaDiHHw0OHcRVY&libraries=places,marker&callback=initMap"
+    async
+    defer
+  ></script>
+  <script src="app.js"></script>
+</body>
+</html>
